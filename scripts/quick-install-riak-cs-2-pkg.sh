@@ -1,7 +1,6 @@
-# quick install riak-cs
+#!/usr/bin/env bash
 
 sudo dpkg -P stanchion riak-cs riak
-
 sudo dpkg -i /setup/riak/riak_2.1.1-1_amd64.deb \
              /setup/riak-cs/riak-cs_2.1.1-1_amd64.deb \
              /setup/stanchion/stanchion_2.1.0-1_amd64.deb

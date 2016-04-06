@@ -5,8 +5,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.synced_folder "~/github/roooms/vagrant-setup", "/setup"
+  config.vm.box = "roooms/trusty64"
+  config.vm.synced_folder "~/github/roooms/allthethings", "/setup"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end

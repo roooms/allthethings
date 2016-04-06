@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export stanchion_hostname="$(hostname --fqdn)"
 export stanchion_ipaddr="0.0.0.0"
 

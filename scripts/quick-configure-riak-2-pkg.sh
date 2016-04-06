@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export riak_hostname="$(hostname --fqdn)"
 export riak_ipaddr="0.0.0.0"
 
