@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.ssh.insert_key = false
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.synced_folder "~/github/roooms/vagrant-setup", "/setup"
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "512"]
+  end
+  nodes = 5
+  baseip = 30
+  (1..nodes).each do |n|
+    nodename = "node#{n}.local"
+    nodeip = "10.0.0.#{baseip+n}"
+    config.vm.define nodename do |node|
+      node.vm.hostname = nodename
+      node.vm.network :private_network, ip: nodeip
+    end
+  end
+end
