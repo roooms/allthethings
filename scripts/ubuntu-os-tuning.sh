@@ -29,10 +29,3 @@ net.ipv4.tcp_rmem = 4096 277750 134217728
 net.ipv4.tcp_wmem = 4096 277750 134217728
 net.core.netdev_max_backlog = 300000" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
-
-# vim syntax highlighting for easy app.config and vm.args review
-echo \
-"syntax on
-filetype on
-au BufNewFile,BufRead app*.config set filetype=erlang
-au BufNewFile,BufRead vm*.args set filetype=sh" | tee -a ~/.vimrc
