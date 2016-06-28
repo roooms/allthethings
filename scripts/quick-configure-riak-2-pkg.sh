@@ -14,4 +14,4 @@ echo "javascript.reduce_pool_size = 0" | sudo tee -a /etc/riak/riak.conf
 echo "javascript.hook_pool_size = 0" | sudo tee -a /etc/riak/riak.conf
 
 # riak-ee configuration
-# todo: change 127.0.0.1 to 0.0.0.0 in /etc/riak/advanced.config
+[ -f "/etc/riak/advanced.config" ] && sed -e "s/127.0.0.1/${riak_ipaddr}/g" /etc/riak/advanced.config | sudo tee /etc/riak/advanced.config
