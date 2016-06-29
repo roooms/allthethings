@@ -16,6 +16,9 @@ echo "nodename = riak-cs@${riak_cs_hostname}" | sudo tee -a /etc/riak-cs/riak-cs
 echo "anonymous_user_creation = on" | sudo tee -a /etc/riak-cs/riak-cs.conf
 echo "listener = ${riak_cs_ipaddr}:8080" | sudo tee -a /etc/riak-cs/riak-cs.conf
 
+# riak-cs-ee configuration
+# todo: consider proxy_get
+
 # this relies on riak-data-migrator import of moss.users
 echo "admin.key = OZ6D0GWO2DOUCXMB6I3H" | sudo tee -a /etc/riak-cs/riak-cs.conf
 echo "admin.secret = ra3KmFveS-SqCoFIta58Mqd3qN7umE2hnunGag==" | sudo tee -a /etc/riak-cs/riak-cs.conf
