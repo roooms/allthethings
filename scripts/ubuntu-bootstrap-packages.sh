@@ -3,22 +3,31 @@
 # useful packages for most builds
 sudo apt-get update --fix-missing
 sudo apt-get install --yes \
+autoconf \
+autogen \
+automake \
 avahi-daemon \
 build-essential \
 curl \
 dnsmasq \
 dstat \
+gcc \
 git \
 iperf \
+libmnl-dev \
 libpam0g-dev \
+make \
+pkg-config \
 python-pip \
 r-base \
 r-cran-plyr \
 r-cran-ggplot2 \
 s3cmd \
 sysstat \
+uuid-dev \
+vim \
 wget \
-vim
+zlib1g-dev \
 
 # vim syntax highlighting for easy escript, app.config and vm.args editing
 echo \
