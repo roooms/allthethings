@@ -3,13 +3,13 @@
 export riak_package="riak/riak_2.1.4-1_amd64.deb"
 #export riak_package="riak/riak_2.1.1-1_amd64.deb"
 #export riak_package="riak-ee/riak-ee_2.1.3-1_amd64.deb"
-export riak-cs_package="riak-cs/riak-cs_2.1.1-1_amd64.deb"
+export riak_cs_package="riak-cs/riak-cs_2.1.1-1_amd64.deb"
 export stanchion_package="stanchion/stanchion_2.1.0-1_amd64.deb"
 
 /setup/scripts/quick-uninstall-pkg.sh
 
 sudo dpkg -i /setup/${riak_package} \
-             /setup/${riak-cs_package} \
+             /setup/${riak_cs_package} \
              /setup/${stanchion_package}
 
 /setup/scripts/quick-configure-riak-2-pkg.sh
