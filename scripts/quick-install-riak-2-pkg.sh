@@ -10,5 +10,8 @@ sudo dpkg -i /setup/${riak_package}
 
 /setup/scripts/quick-configure-riak-2-pkg.sh
 
-sudo riak start
-sudo riak-admin wait-for-service riak_kv
+read -r -p "Start Riak? [y/N] " response
+if [[ ${response} =~ ^([yY])$ ]]; then
+    sudo riak start
+    sudo riak-admin wait-for-service riak_kv
+fi
