@@ -1,9 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure(2) do |config|
   config.ssh.insert_key = false
   config.vm.box = "roooms/trusty64"
   config.vm.synced_folder "~/github/roooms/allthethings", "/setup"
