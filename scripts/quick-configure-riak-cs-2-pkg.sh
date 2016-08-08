@@ -2,18 +2,18 @@
 
 export riak_cs_hostname="$(hostname --fqdn)"
 export riak_cs_ipaddr="0.0.0.0"
+export riak_cs_version="$(sudo riak-cs version)"
 
 # redirect port 80 to 8080 for local traffic
 sudo iptables --table nat --insert OUTPUT --protocol tcp --out-interface lo --dport 80 --jump REDIRECT --to-ports 8080 -v
 
-# first configure riak 2.1.1 for riak-cs
+# riak configuration for riak-cs
 echo "buckets.default.allow_mult = true" | sudo tee -a /etc/riak/riak.conf
-echo "storage_backend = prefix_multi" | sudo tee -a /etc/riak/riak.conf
-echo "cs_version = 20100" | sudo tee -a /etc/riak/riak.conf
+echo "storage_backend = riak_cs_kv_multi_backend" | sudo tee -a /etc/riak/riak.config
+sed -e "s/X.X.X/${riak_cs_version}/g" /setup/config/riak-cs/advanced.config | sudo tee /etc/riak-cs/advanced.config
 
 # riak-cs configuration
 echo "nodename = riak-cs@${riak_cs_hostname}" | sudo tee -a /etc/riak-cs/riak-cs.conf
-echo "anonymous_user_creation = on" | sudo tee -a /etc/riak-cs/riak-cs.conf
 echo "listener = ${riak_cs_ipaddr}:8080" | sudo tee -a /etc/riak-cs/riak-cs.conf
 
 # riak-cs-ee configuration

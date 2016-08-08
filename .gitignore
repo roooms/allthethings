@@ -1,6 +1,6 @@
-basho_bench
-riak
-riak-cs
-riak-ee
+/basho_bench
+/riak
+/riak-cs
+/riak-ee
 *.deb
 *.tar.gz
