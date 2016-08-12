@@ -14,6 +14,7 @@ dstat \
 gcc \
 git \
 iperf \
+libdigest-hmac-perl \
 libmnl-dev \
 libpam0g-dev \
 make \
