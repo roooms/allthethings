@@ -9,8 +9,8 @@ export riak_cs_version="$(sudo riak-cs version)"
 
 # riak configuration for riak-cs
 echo "buckets.default.allow_mult = true" | sudo tee -a /etc/riak/riak.conf
-echo "storage_backend = riak_cs_kv_multi_backend" | sudo tee -a /etc/riak/riak.config
-sed -e "s/X.X.X/${riak_cs_version}/g" /setup/config/riak-cs/advanced.config | sudo tee /etc/riak-cs/advanced.config
+sed -e "s/^storage_backend/#storage_backend/g" /etc/riak/riak.conf | sudo tee -a /etc/riak/riak.conf
+sed -e "s/X.X.X/${riak_cs_version}/g" /setup/config/riak-cs/etc_riak_advanced.config | sudo tee /etc/riak/advanced.config
 
 # riak-cs configuration
 echo "nodename = riak-cs@${riak_cs_hostname}" | sudo tee -a /etc/riak-cs/riak-cs.conf
