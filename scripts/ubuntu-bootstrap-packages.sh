@@ -25,6 +25,7 @@ r-cran-plyr \
 r-cran-ggplot2 \
 s3cmd \
 sysstat \
+tidy \
 uuid-dev \
 vim \
 wget \
