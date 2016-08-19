@@ -1,0 +1,6 @@
+%awsSecretAccessKeys = (
+    admin => {
+        id  => 'OZ6D0GWO2DOUCXMB6I3H',
+        key => 'ra3KmFveS-SqCoFIta58Mqd3qN7umE2hnunGag==',
+    },
+);
