@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export stanchion_hostname="$(hostname --fqdn)"
-export stanchion_ipaddr="0.0.0.0"
+stanchion_hostname="$(hostname --fqdn)"
+stanchion_ipaddr="0.0.0.0"
 
 # stanchion configuration
 echo "nodename = stanchion@${stanchion_hostname}" | sudo tee -a /etc/stanchion/stanchion.conf

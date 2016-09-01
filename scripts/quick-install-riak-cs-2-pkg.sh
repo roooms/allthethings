@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 
-export riak_package="riak/riak_2.0.5-1_amd64.deb"
-export riak_cs_package="riak-cs/riak-cs_2.0.1-1_amd64.deb"
-export stanchion_package="stanchion/stanchion_2.0.0-1_amd64.deb"
+script_path="$(dirname ${BASH_SOURCE[0]})"
+riak_package="/setup/riak/riak_2.0.5-1_amd64.deb"
+riak_cs_package="/setup/riak-cs/riak-cs_2.0.1-1_amd64.deb"
+stanchion_package="/setup/stanchion/stanchion_2.0.0-1_amd64.deb"
 
-/setup/scripts/quick-uninstall-pkg.sh
+${script_path}/quick-uninstall-pkg.sh
 
-sudo dpkg -i /setup/${riak_package} \
-             /setup/${riak_cs_package} \
-             /setup/${stanchion_package}
+sudo dpkg -i ${riak_package} \
+             ${riak_cs_package} \
+             ${stanchion_package}
 
-/setup/scripts/quick-configure-riak-2-pkg.sh
-/setup/scripts/quick-configure-riak-cs-2-pkg.sh
-/setup/scripts/quick-configure-stanchion-2-pkg.sh
+${script_path}/quick-configure-riak-2-pkg.sh
+${script_path}/quick-configure-riak-cs-2-pkg.sh
+${script_path}/quick-configure-stanchion-2-pkg.sh
 
 sudo riak start
 sudo riak-admin wait-for-service riak_kv

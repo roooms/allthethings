@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "roooms/trusty64"
   config.vm.hostname = nodename
   config.vm.network "private_network", ip: nodeip
-  config.vm.synced_folder "~/github/roooms/allthethings", "/setup"
+  config.vm.synced_folder "~/vagrant/setup", "/setup"
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end

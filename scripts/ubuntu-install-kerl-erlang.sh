@@ -27,11 +27,6 @@ kerl install R15B01 ~/erlang/R15B01
 # . ~/erlang/R15B01/activate
 
 # install basho version of erlang R16B02
-kerl build git git://github.com/basho/otp.git OTP_R16B02_basho8 R16B02_basho8
-kerl install R16B02_basho8 ~/erlang/R16B02_basho8
-# . ~/erlang/R16B02_basho8/activate
-
-# install basho version of erlang R16B02
 kerl build git git://github.com/basho/otp.git OTP_R16B02_basho10 R16B02_basho10
 kerl install R16B02_basho10 ~/erlang/R16B02_basho10
 # . ~/erlang/R16B02_basho10/activate

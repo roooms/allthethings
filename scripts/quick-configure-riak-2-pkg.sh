@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export riak_hostname="$(hostname --fqdn)"
-export riak_ipaddr="0.0.0.0"
+riak_hostname="$(hostname --fqdn)"
+riak_ipaddr="0.0.0.0"
 
 # riak configuration
 echo "nodename = riak@${riak_hostname}" | sudo tee -a /etc/riak/riak.conf

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo mkdir /opt/jdk
+sudo mkdir -p /opt/jdk
 if [[ -f "/setup/java/jdk-8u51-linux-x64.tar.gz" ]]; then
     sudo tar xf /setup/java/jdk-8u51-linux-x64.tar.gz -C /opt/jdk
 else
@@ -14,4 +14,3 @@ sudo update-alternatives --install /usr/bin/jar jar /opt/jdk/jdk1.8.0_51/bin/jar
 update-alternatives --display java
 update-alternatives --display javac
 java -version
-

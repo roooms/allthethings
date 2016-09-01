@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-/setup/scripts/install-riak-python-client.sh
+script_path="$(dirname ${BASH_SOURCE[0]})"
+
+${script_path}/install-riak-python-client.sh
 
 sudo dpkg -P riak
 sudo dpkg -i /setup/riak-ts/riak-ts_1.0.0-1_amd64.deb
 
-/setup/scripts/quick-configure-riak-2-pkg.sh
+${script_path}/quick-configure-riak-2-pkg.sh
 
 # initial table setup
 sudo su riak
