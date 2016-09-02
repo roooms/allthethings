@@ -7,6 +7,8 @@ riak_package="/setup/riak/riak_2.0.7-1_amd64.deb"
 
 ${script_path}/quick-uninstall-pkg.sh
 
+[ -f ${riak_package} ] || echo "Couldn't find ${riak_package}"; exit 1
+
 sudo dpkg -i ${riak_package}
 
 ${script_path}/quick-configure-riak-2-pkg.sh
