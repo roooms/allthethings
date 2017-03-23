@@ -29,7 +29,7 @@ tidy \
 uuid-dev \
 vim \
 wget \
-zlib1g-dev \
+zlib1g-dev
 
 # vim syntax highlighting for easy escript, app.config and vm.args editing
 echo \
