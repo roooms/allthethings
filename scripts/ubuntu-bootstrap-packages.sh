@@ -21,11 +21,12 @@ make \
 pkg-config \
 python-pip \
 r-base \
-r-cran-plyr \
 r-cran-ggplot2 \
+r-cran-plyr \
 s3cmd \
 sysstat \
 tidy \
+tree \
 uuid-dev \
 vim \
 wget \
