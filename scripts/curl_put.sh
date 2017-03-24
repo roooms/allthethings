@@ -17,7 +17,7 @@ usage()
 # get options
 while getopts "hs:p:t:b:f:l:v:" option; do
     case $option in
-        h) 
+        h)
             usage
             exit
         ;;
@@ -60,7 +60,7 @@ if [[ -n ${riak_http_check} ]]; then
     for key in $(eval echo "{$first_key..$last_key}"); do
         riak_key_url="${riak_bucket_url}/keys/${key}"
         echo "[info] PUT ${riak_key_url}" \
-        && curl -XPUT "${riak_key_url}" -d "${value}"
+        && curl -s -XPUT "${riak_key_url}" -d "${value}"
     done
 else
     echo "[error] ${riak_bucket_url}/props did not return an HTTP 200 response"
