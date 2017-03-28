@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-config_path="$(dirname ${BASH_SOURCE[0]})/../config"
+config_path="$(dirname "${BASH_SOURCE[0]}")/../config"
 riak_cs_hostname="$(hostname --fqdn)"
 riak_cs_ipaddr="0.0.0.0"
 riak_cs_version="$(sudo riak-cs version)"
@@ -11,7 +11,7 @@ sudo iptables --table nat --insert OUTPUT --protocol tcp --out-interface lo --dp
 # riak configuration for riak-cs
 echo "buckets.default.allow_mult = true" | sudo tee -a /etc/riak/riak.conf
 sed -e "s/^storage_backend/#storage_backend/g" /etc/riak/riak.conf | sudo tee -a /etc/riak/riak.conf
-sed -e "s/X.X.X/${riak_cs_version}/g" ${config_path}/riak-cs/etc_riak_advanced.config | sudo tee /etc/riak/advanced.config
+sed -e "s/X.X.X/${riak_cs_version}/g" "${config_path}"/riak-cs/etc_riak_advanced.config | sudo tee /etc/riak/advanced.config
 
 # riak-cs configuration
 echo "nodename = riak-cs@${riak_cs_hostname}" | sudo tee -a /etc/riak-cs/riak-cs.conf

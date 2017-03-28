@@ -46,7 +46,7 @@ while getopts "hs:p:t:b:f:l:v:" option; do
 done
 
 # define bucket url based on Riak version
-if [ $bucket_type != "default" ]; then
+if [[ "$bucket_type" != "default" ]]; then
     riak_bucket_url="http://${riak_ip}:${riak_port}/types/${bucket_type}/buckets/${bucket}"
 else
     riak_bucket_url="http://${riak_ip}:${riak_port}/buckets/${bucket}"
